@@ -45,8 +45,37 @@ $(document).ready(()=>{
 		}
 		$('.mg-stuff').html(memoryHTML);
 
-	})
+		$('.card-holder').click(function(){
+			$(this).addClass('flip');
+			// A card just flipped over.
+			// Is there another one turned over already?
+			// - If not, do nothing.
+			// - If so, check and see if they match.
 
+			var cardsUp = $('.flip');
+			if(cardsUp.length === 2){
+				// 2 cards up. Check. The only way the length can be 2 is if 2 elements have a class of 'flip'.
+				var card1 = cardsUp[0];
+				var card2 = cardsUp[1];
+				if(card1.innerHTML === card2.innerHTML){
+					// MATCH!
+					cardsUp.addClass('matched');
+					cardsUp.removeClass('flip');
+				}else{
+					// not a match
+					setTimeout(()=>{
+						cardsUp.removeClass('flip');
+					}, 1500);
+				}
+			}else{
+				// 1 card up. Do nothing.
+			}
+
+		});
+
+	});
+
+	
 
 
 

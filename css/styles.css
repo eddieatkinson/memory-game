@@ -9,7 +9,6 @@ This doesn't make card 3d, but everything else.*/
 	perspective: 800px;
 	border: 2px solid black;
 	height: 300px;
-	min-width: 300px;
 }
 
 .card-holder{
@@ -17,6 +16,8 @@ This doesn't make card 3d, but everything else.*/
 	transform-style: preserve-3d;
 	transition: 1s all;
 	cursor: pointer;
+	width: 300px;
+	height: 300px;
 }
 
 .card-front, .card-back{
@@ -33,5 +34,13 @@ This doesn't make card 3d, but everything else.*/
 .card-back{
 	background: url('../images/logo-bw.png') no-repeat 50% 50%;
 	height: 300px;
-	width: 300px;
+	width: 100%;
+}
+
+.flip{
+	transform: rotateY(-180deg);
+}
+
+.matched{
+	transform: rotateY(540deg);
 }
