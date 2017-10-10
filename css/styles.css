@@ -16,8 +16,6 @@ This doesn't make card 3d, but everything else.*/
 	transform-style: preserve-3d;
 	transition: 1s all;
 	cursor: pointer;
-	width: 300px;
-	height: 300px;
 }
 
 .card-front, .card-back{
