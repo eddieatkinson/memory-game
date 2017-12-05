@@ -21,14 +21,7 @@ $(document).ready(()=>{
 	var cardsToUse = [];
 
 	$('button').click(function(){
-		var userAnswer = $(this).html();
-		if(userAnswer === "Easy"){
-			gridSize = 4;
-		}else if(userAnswer === "Medium"){
-			gridSize = 12;
-		}else if(userAnswer === "Hard"){
-			gridSize = 28;
-		}
+		gridSize = $(this).attr("diff"); // We made this attribute up just for this purpose.
 
 		cards.map((card, index)=>{
 			cardsToUse.push(card, card); // So we have 2 of each card.
@@ -63,8 +56,10 @@ $(document).ready(()=>{
 					cardsUp.removeClass('flip');
 				}else{
 					// not a match
+					cardsUp.removeClass('flip');
+					cardsUp.addClass('temp-flip'); // in case someone clicks quickly, let's replace 'flip' with 'temp-flip'
 					setTimeout(()=>{
-						cardsUp.removeClass('flip');
+						cardsUp.removeClass('temp-flip');
 					}, 1500);
 				}
 			}else{

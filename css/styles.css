@@ -35,7 +35,7 @@ This doesn't make card 3d, but everything else.*/
 	width: 100%;
 }
 
-.flip{
+.flip, .temp-flip{
 	transform: rotateY(-180deg);
 }
 
